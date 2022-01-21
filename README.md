@@ -1,2 +1,7 @@
-# sql-query-template
-SQL query template
+# SQL query template
+
+### Install:
+
+```bash
+npm i sql-query-template
+```
