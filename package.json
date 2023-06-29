@@ -1,6 +1,6 @@
 {
   "name": "sql-query-template",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SQL query template",
   "main": "index.js",
   "scripts": {
