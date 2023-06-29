@@ -29,5 +29,5 @@ export const sql = (originalText: TemplateStringsArray, ...values: any[]) => {
     text = originalTextArray[0] as string;
   }
 
-  return { text, values, originalText: originalTextArray, _sqlQueryTagFunction: true };
+  return { text, values, originalText: originalTextArray, _sqlQueryTagFunction: true, hello: true };
 };
