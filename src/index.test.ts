@@ -1,6 +1,6 @@
-import { sql } from "./index";
+import { sql } from './index';
 
-test("Query without params", () => {
+test('Query without params', () => {
   const query = sql`
     SELECT *
     FROM users;`;
@@ -10,7 +10,7 @@ test("Query without params", () => {
   expect(query.values).toHaveLength(0);
 });
 
-test("Query with params", () => {
+test('Query with params', () => {
   const id = 1;
   const query = sql`
     SELECT *
@@ -26,7 +26,7 @@ test("Query with params", () => {
   expect(query.values[0]).toBe(id);
 });
 
-test("Nested queries", () => {
+test('Nested queries', () => {
   const id = 1;
   const isActive = true;
   const where = sql`"id" = ${id} AND "isActive" = ${isActive}`;
