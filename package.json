@@ -1,12 +1,20 @@
 {
   "name": "sql-query-template",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "SQL query template",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest"
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SlavenBesevic/sql-query-template.git"
