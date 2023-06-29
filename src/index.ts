@@ -1,6 +1,6 @@
 export const sql = (originalText: TemplateStringsArray, ...values: any[]) => {
   const originalTextArray: string[] = [...originalText];
-  let text = "";
+  let text = '';
 
   if (values.length) {
     let i = 0;
@@ -15,14 +15,10 @@ export const sql = (originalText: TemplateStringsArray, ...values: any[]) => {
 
         originalTextArray.splice(i + 1, 0, ...newText);
 
-        originalTextArray[i + newTextLength] = `${
-          originalTextArray[i + newTextLength]
-        } ${originalTextArray[i + newTextLength + 1]}`;
+        originalTextArray[i + newTextLength] = `${originalTextArray[i + newTextLength]} ${originalTextArray[i + newTextLength + 1]}`;
         originalTextArray.splice(i + newTextLength + 1, 1);
 
-        originalTextArray[i] = `${originalTextArray[i]} ${
-          originalTextArray[i + 1]
-        }`;
+        originalTextArray[i] = `${originalTextArray[i]} ${originalTextArray[i + 1]}`;
         originalTextArray.splice(i + 1, 1);
       }
       text += `${originalTextArray[i]}$${i + 1}`;
