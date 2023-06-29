@@ -1,32 +1,3 @@
-# name: Release
-# on:
-#   workflow_run:
-#     workflows: ["Tests"]
-#     branches: [development]
-#     types:
-#       - completed
-
-# jobs:
-#   release:
-#     name: Release
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: "lts/*"
-#       - name: Install dependencies
-#         run: npm ci
-#       - name: Release
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-#         run: npx semantic-release
-
 name: Release
 on:
   workflow_run:
@@ -36,15 +7,22 @@ on:
       - completed
 
 jobs:
-  publish:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          node-version: '18'
-      - run: npm ci
-      - run: npm test
-      - uses: JS-DevTools/npm-publish@v2
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm ci
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
