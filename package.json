@@ -1,7 +1,7 @@
 {
   "name": "sql-query-template",
   "version": "0.0.0-development",
-  "description": "SQL query template",
+  "description": "SQL query template Postgres",
   "types": "./dist/cjs/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "exports": {
