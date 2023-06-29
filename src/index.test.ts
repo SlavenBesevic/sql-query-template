@@ -34,7 +34,6 @@ test("Nested queries", () => {
     SELECT *
     FROM users
     WHERE ${where};`;
-  console.log("🚀 ~ file: index.test.ts:19 ~ test ~ query:", query);
 
   expect(query.originalText).toHaveLength(3);
   expect(query.text).toBe(`

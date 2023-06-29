@@ -1,12 +1,15 @@
 {
-  "files": ["src/index.ts"],
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
-    "declaration": true,
-    "outDir": "./dist",
-    "noEmit": false,
     "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -20,9 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  }
+    "noPropertyAccessFromIndexSignature": true
+  },
+  "files": ["./src/index.ts"]
 }
